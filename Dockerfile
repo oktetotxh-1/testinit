@@ -1,7 +1,9 @@
 FROM ubuntu:21.04
 MAINTAINER “TTMN tixiaohan” <tixiaohan@gmail.com>
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install systemd ssh wget init npm sudo vim sudo nano chromium-browser -y
+RUN DEBIAN_FRONTEND=noninteractive apt install systemd ssh wget npm sudo vim sudo nano chromium-browser -y
+RUN DEBIAN_FRONTEND=noninteractive apt install init
+RUN service init start
 RUN npm install -g wstunnel
 RUN service init start
 RUN mkdir /run/sshd 
