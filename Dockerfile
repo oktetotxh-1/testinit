@@ -4,7 +4,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt install systemd ssh wget npm sudo vim sud
 RUN npm install -g wstunnel
 RUN mkdir /run/sshd 
 RUN wstunnel -s 0.0.0.0:80 &
-RUN /usr/sbin/sshd -D
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:tixiaohan|chpasswd
 RUN cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i   == systemd-tmpfiles-setup.service ] || rm -f $i; done) \
