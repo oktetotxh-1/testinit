@@ -3,6 +3,7 @@ MAINTAINER “TTMN tixiaohan” <tixiaohan@gmail.com>
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install systemd ssh wget init npm sudo vim sudo nano chromium-browser -y
 RUN npm install -g wstunnel
+RUN service init start
 RUN mkdir /run/sshd 
 RUN wstunnel -s 0.0.0.0:80 &
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
