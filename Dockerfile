@@ -7,5 +7,6 @@ RUN mkdir /run/sshd
 RUN wstunnel -s 0.0.0.0:80 &
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:tixiaohan|chpasswd
+RUN whereis init
 EXPOSE 80
 CMD [“init -z”]
