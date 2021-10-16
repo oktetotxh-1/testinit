@@ -9,4 +9,4 @@ RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config
 RUN echo root:tixiaohan|chpasswd
 RUN whereis init
 EXPOSE 80
-CMD [“/usr/sbin/init”]
+CMD /usr/sbin/init
